@@ -29,10 +29,9 @@ class JsonResponse extends Response {
 }
 
 const router = AutoRouter();
-const firebaseConfig = require('./firebase.config.json')
 import { Database } from 'firebase-firestore-lite';
 
-const database = new Database({ projectId: firebaseConfig.projectId });
+const database = new Database({ projectId: "wow-recipies" });
 /**
  * A simple :wave: hello page to verify the worker is working.
  */

@@ -55361,21 +55361,6 @@ var require_register = __commonJS({
   }
 });
 
-// firebase.config.json
-var require_firebase_config = __commonJS({
-  "firebase.config.json"(exports, module) {
-    module.exports = {
-      apiKey: "AIzaSyCSZ65qNfiWKkraCAraJS8BBn7tCphn108",
-      authDomain: "wow-recipies.firebaseapp.com",
-      projectId: "wow-recipies",
-      storageBucket: "wow-recipies.firebasestorage.app",
-      messagingSenderId: "390942018179",
-      appId: "1:390942018179:web:b4de633e523907f53f29b6",
-      measurementId: "G-4JXVCF90N6"
-    };
-  }
-});
-
 // .wrangler/tmp/bundle-lXTjVO/middleware-loader.entry.ts
 init_checked_fetch();
 init_modules_watch_stub();
@@ -59363,8 +59348,7 @@ var JsonResponse = class extends Response {
 };
 __name(JsonResponse, "JsonResponse");
 var router = n();
-var firebaseConfig = require_firebase_config();
-var database = new Database({ projectId: firebaseConfig.projectId });
+var database = new Database({ projectId: "wow-recipies" });
 router.get("/", (request, env) => {
   return new Response(`\u{1F44B} ${env.DISCORD_APPLICATION_ID}`);
 });
