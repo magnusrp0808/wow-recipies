@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-import { InteractionResponseFlags } from 'discord-interactions';
+const { InteractionResponseFlags } = require('discord-interactions');
 const { write, exists } = require('../../database/rest')
 
 const blacksmithing  = require("../../data/blacksmithing.json");

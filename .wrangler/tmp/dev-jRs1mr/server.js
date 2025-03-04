@@ -53865,8 +53865,8 @@ var require_crafters = __commonJS({
   "commands/recipy/crafters.js"(exports, module) {
     init_checked_fetch();
     init_modules_watch_stub();
-    var import_discord_interactions2 = __toESM(require_dist());
     var { SlashCommandBuilder } = require_dist4();
+    var { InteractionResponseFlags } = require_dist();
     var { write, getCrafters } = require_rest();
     var { bold, mention } = require_formatting();
     var blacksmithing = require_blacksmithing();
@@ -53910,7 +53910,7 @@ var require_crafters = __commonJS({
         }
         return interaction.reply({
           content: contents.length > 0 ? contents.join("\n") : "Something went wrong",
-          flags: import_discord_interactions2.InteractionResponseFlags.EPHEMERAL,
+          flags: InteractionResponseFlags.EPHEMERAL,
           allowed_mentions: { parse: [] }
         });
       }
@@ -54001,8 +54001,8 @@ var require_register = __commonJS({
   "commands/recipy/register.js"(exports, module) {
     init_checked_fetch();
     init_modules_watch_stub();
-    var import_discord_interactions2 = __toESM(require_dist());
     var { SlashCommandBuilder } = require_dist4();
+    var { InteractionResponseFlags } = require_dist();
     var { write, exists } = require_rest();
     var blacksmithing = require_blacksmithing();
     var enchanting = require_enchanting();
@@ -54045,7 +54045,7 @@ var require_register = __commonJS({
         }
         return interaction.reply({
           content: `Successfully registered recipies!`,
-          flags: import_discord_interactions2.InteractionResponseFlags.EPHEMERAL
+          flags: InteractionResponseFlags.EPHEMERAL
         });
       }
     };
