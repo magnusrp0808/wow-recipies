@@ -13,9 +13,6 @@ const craftersCommand = require('./commands/recipy/crafters');
 const recipyListCommand = require('./commands/recipy/recipyList');
 const registerCommand = require('./commands/recipy/register');
 
-import { REST } from '@discordjs/rest';
-import { Routes } from 'discord-api-types/v10';
-
 class JsonResponse extends Response {
   constructor(body, init) {
     const jsonBody = JSON.stringify(body);
@@ -36,7 +33,7 @@ const database = new Database({ projectId: "wow-recipies" });
  * A simple :wave: hello page to verify the worker is working.
  */
 router.get('/', (request, env) => {
-  return new Response(`👋 ${env.DISCORD_APPLICATION_ID}`);
+  return new Response(`👋 ${env.DISCORD_APPLICATION_ID} ${env.DISCORD_PUBLIC_KEY}`);
 });
 
 /**
