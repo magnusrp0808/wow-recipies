@@ -1,0 +1,32 @@
+{
+  "name": "wow-recipies",
+  "version": "1.0.1",
+  "description": "Discord bot for managing guild members recipies",
+  "main": "server.js",
+  "scripts": {
+    "start": "wrangler dev",
+    "ngrok": "ngrok http 8787",
+    "test": "c8 mocha test",
+    "fix": "eslint --fix '**/*.js'",
+    "lint": "eslint '**/*.js'",
+    "register": "node deploy-commands.js",
+    "publish": "wrangler deploy"
+  },
+  "author": "Maggos",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^2.4.3",
+    "discord-interactions": "^4.1.1",
+    "discord.js": "^14.18.0",
+    "firebase": "^11.3.1",
+    "firebase-auth-lite": "^0.8.9",
+    "firebase-firestore-lite": "^1.0.3",
+    "itty-router": "^5.0.18",
+    "ngrok": "^5.0.0-beta.2",
+    "wrangler": "^3.111.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "eslint": "^9.21.0"
+  }
+}
