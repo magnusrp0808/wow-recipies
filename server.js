@@ -120,8 +120,6 @@ async function verifyDiscordRequest(request, env) {
     }
 
     let interaction = JSON.parse(body);
-    interaction.guild.members = interaction.guild.members ?? {};
-    interaction.guild.members.cache = await getGuildMembers(interaction.guild_id, env);
     interaction.reply = function(data) {
         return new JsonResponse({
             type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
@@ -136,11 +134,6 @@ async function verifyDiscordRequest(request, env) {
     }
 
     return { interaction: interaction, isValid: true };
-}
-
-async function getGuildMembers(guildId, env) {
-    const rest = new REST({ version: '10' }).setToken(env.DISCORD_TOKEN);
-    return await rest.get(Routes.guildMembers(guildId));
 }
 
 const server = {
